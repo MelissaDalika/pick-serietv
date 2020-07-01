@@ -10,8 +10,13 @@
       integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
       crossorigin="anonymous"
     />
+    <!-- <script type="text/javascript" src="file.js"></script> -->
     <!-- <link rel="stylesheet" href="style.css"> -->
+
     <script>
+      //JS 
+
+      //ARRAY SERIETV
       let serieTv = [];
 
       serieTv.push({
@@ -133,7 +138,7 @@
         title_holder[0].innerText = serieSelezionata.title;
 
         const description_holder = document.querySelectorAll(
-          "#random_choice .text1 span"
+          "#random_choice .text1"
         );
         description_holder[0].innerText = serieSelezionata.description;
 
@@ -178,18 +183,20 @@
         <div>
           <ul class="list-group list-group-flush">
             <li class="list-group-item">
-              <h5 class="text1 text-muted text-monospace">
-                Description: <span></span>
-              </h5>
+              <h4>Description:</h4>
+              <h5 class="text1 text-muted text-monospace"></h5>
             </li>
             <li class="list-group-item">
-              <h5 class="text2 text-muted text-monospace">Original Title:</h5>
+              <h4>Original Title:</h4>
+              <h5 class="text2 text-muted text-monospace"></h5>
             </li>
             <li class="list-group-item">
-              <h5 class="text3 text-muted text-monospace">Year:</h5>
+              <h4>Year:</h4>
+              <h5 class="text3 text-muted text-monospace"></h5>
             </li>
             <li class="list-group-item">
-              <h5 class="text4 text-muted text-monospace">Rating:</h5>
+              <h4>Rating:</h4>
+              <h5 class="text4 text-muted text-monospace"></h5>
             </li>
           </ul>
         </div>
