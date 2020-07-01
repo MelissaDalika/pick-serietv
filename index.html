@@ -1,11 +1,219 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pick-serietv</title>
-</head>
-<body>
-  <h1>Benvenuto!</h1>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pick-serietv</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous"
+    />
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <script>
+      let serieTv = [];
+
+      serieTv.push({
+        title: "La casa di carta",
+        description:
+          "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+        original_title: "La casa de papel",
+        year: 2017,
+        rating: 8,
+        image:
+          "https://wips.plug.it/cips/tecnologia/cms/2020/06/la-casa-di-carta-5.jpg",
+      });
+
+      serieTv.push({
+        title: "Dark",
+        description:
+          "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+        original_title: "Dark",
+        year: 2017,
+        rating: 9,
+        image:
+          "https://i0.wp.com/images.liveuniversity.it/sites/2/2020/05/dark-serie-tv.jpg?fit=990%2C557&ssl=1",
+      });
+
+      serieTv.push({
+        title: "Vis a Vis",
+        description:
+          "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+        original_title: "Vis a Vis",
+        year: 2015,
+        rating: 7,
+        image:
+          "https://www.cinefacts.it/foto/h!vis-a-vis-il-prezzo-del-riscatto-1320x743.jpg",
+      });
+
+      serieTv.push({
+        title: "Fargo",
+        description:
+          "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+        original_title: "Fargo",
+        year: 2014,
+        rating: 7,
+        image:
+          "https://programma.sorrisi.com/guidatv/uploads/media/cache/epg_program_large/uploads/epg/images/programseries/2/4/7/182742/originale/9477.jpg",
+      });
+
+      serieTv.push({
+        title: "Il trono di spade",
+        description:
+          "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book",
+        original_title: "Game of Thrones",
+        year: 2011,
+        rating: 9,
+        image:
+          "https://oltrelalinea.news/wp-content/uploads/2019/03/GameofThrones8-20-posters.jpg",
+      });
+
+      serieTv.push({
+        title: "Black Mirror",
+        description:
+          "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+        original_title: "Black Mirror",
+        year: 2011,
+        rating: 6,
+        image:
+          "https://i0.wp.com/www.italiasera.it/wp-content/uploads/2020/05/black1-640x427.png",
+      });
+
+      serieTv.push({
+        title: "Stranger Things",
+        description:
+          "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+        original_title: "Stranger Things",
+        year: 2016,
+        rating: 9,
+        image:
+          "https://www.open.online/wp-content/uploads/2019/07/maxresdefault-1024x576.jpg",
+      });
+
+      serieTv.push({
+        title: "The Big Bang Theory",
+        description:
+          "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+        original_title: "The Big Bang Theory",
+        year: 2007,
+        rating: 8,
+        image:
+          "https://www.7per24.it/wp-content/uploads/2017/10/02-Cast-The-Big-Bang-Theory.jpg",
+      });
+
+      serieTv.push({
+        title: "Chiamatemi Anna",
+        description:
+          "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+        original_title: "Anne with an E",
+        year: 2017,
+        rating: 7,
+        image:
+          "https://thrillernord.it/wp-content/uploads/2020/03/frases-anne-with-an-e.jpg",
+      });
+
+      //console.log(serieTv);
+
+      function getRandomSeries(allSeries) {
+        // for (let i = 0; i < allSeries.length; i++){}
+        return allSeries[getRandomInt(allSeries.length)];
+      }
+      function getRandomInt(max) {
+        return Math.floor(Math.random() * Math.floor(max));
+      }
+      let serieSelezionata = getRandomSeries(serieTv);
+
+      function shuffle(serieTv) {
+        let serieSelezionata = getRandomSeries(serieTv);
+
+        const title_holder = document.querySelectorAll(
+          "#random_choice .card-header"
+        );
+        title_holder[0].innerText = serieSelezionata.title;
+
+        const description_holder = document.querySelectorAll(
+          "#random_choice .text1 span"
+        );
+        description_holder[0].innerText = serieSelezionata.description;
+
+        const original_title_holder = document.querySelectorAll(
+          "#random_choice .text2"
+        );
+        original_title_holder[0].innerText = serieSelezionata.original_title;
+
+        const year_holder = document.querySelectorAll("#random_choice .text3");
+        year_holder[0].innerText = serieSelezionata.year;
+
+        const rating_holder = document.querySelectorAll(
+          "#random_choice .text4"
+        );
+        rating_holder[0].innerText = serieSelezionata.rating;
+
+        const image_holder = document.querySelectorAll(
+          "#random_choice .car-img-top"
+        );
+        image_holder[0].src = serieSelezionata.image;
+      }
+    </script>
+
+    <style>
+      body {
+        background-color: #d4f0f0;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1 class="text-white bg-info text-center text-uppercase text-monospace">
+      SerieTv Random
+    </h1>
+    <div class="container" style="margin-top: 30px;">
+      <div id="random_choice" class="card mb-3 rounded-top shadow">
+        <img class="car-img-top" alt="serieimg" />
+        <div
+          class="card-header bg-dark text-white text-center text-uppercase text-monospace"
+        >
+        </div>
+        <div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              <h5 class="text1 text-muted text-monospace">
+                Description: <span></span>
+              </h5>
+            </li>
+            <li class="list-group-item">
+              <h5 class="text2 text-muted text-monospace">Original Title:</h5>
+            </li>
+            <li class="list-group-item">
+              <h5 class="text3 text-muted text-monospace">Year:</h5>
+            </li>
+            <li class="list-group-item">
+              <h5 class="text4 text-muted text-monospace">Rating:</h5>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <script>
+        shuffle(serieTv);
+      </script>
+      <!-- TENTATIVO BOTTONE -->
+      <div>
+        <button
+          id="pulsante"
+          type="button"
+          id="pulsante"
+          class="btn btn-outline-info mx-auto"
+        >
+          Another Title
+        </button>
+        <script>
+          document.getElementById("pulsante").addEventListener("click", () => {
+            shuffle(serieTv);
+          });
+        </script>
+      </div>
+    </div>
+  </body>
 </html>
